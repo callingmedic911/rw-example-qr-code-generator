@@ -4682,6 +4682,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tailwindcss/forms@npm:^0.5.0":
+  version: 0.5.0
+  resolution: "@tailwindcss/forms@npm:0.5.0"
+  dependencies:
+    mini-svg-data-uri: ^1.2.3
+  peerDependencies:
+    tailwindcss: ">=3.0.0 || >= 3.0.0-alpha.1"
+  checksum: f9b5c3d087bdf6901d72b0be6655d9142b6a91b0f78ea7894e202d0971a5020d71a5067af076e9a6641cca710d81c1799a1615441725a6a0d07ba6387e9f2b00
+  languageName: node
+  linkType: hard
+
 "@testing-library/dom@npm:^8.0.0, @testing-library/dom@npm:^8.11.1":
   version: 8.11.3
   resolution: "@testing-library/dom@npm:8.11.3"
@@ -5321,6 +5332,15 @@ __metadata:
   version: 15.7.4
   resolution: "@types/prop-types@npm:15.7.4"
   checksum: 014bb826592fab01499931259969aafc21d5a8ff4ece3e3fb8e2b5186bed17656f7dcdccf9a98c27fee74d7d0697aa3f53ea971a72679597f0ca0c3d5ca585d3
+  languageName: node
+  linkType: hard
+
+"@types/qrcode@npm:^1.4.2":
+  version: 1.4.2
+  resolution: "@types/qrcode@npm:1.4.2"
+  dependencies:
+    "@types/node": "*"
+  checksum: 97b68077223a56b6d86501bd6273a11801059c364792ac6d8366333407a6d8149b2ceec6ebd04f5d6521e6821000b7458aad755e2e47ace05b1e39f1252c954a
   languageName: node
   linkType: hard
 
@@ -9818,6 +9838,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dijkstrajs@npm:^1.0.1":
+  version: 1.0.2
+  resolution: "dijkstrajs@npm:1.0.2"
+  checksum: 323e10c46a163a2b8ff6a357f967cff4392981d351de9077d131469d02edfe9cd38ce079bbb58c8cf99e6925a75a3b22269d1886381a8eab1daf0d2e39191728
+  languageName: node
+  linkType: hard
+
 "dir-glob@npm:^2.2.2":
   version: 2.2.2
   resolution: "dir-glob@npm:2.2.2"
@@ -10209,6 +10236,13 @@ __metadata:
     "@emotion/core": ^10.0.27
     react: ">=16.3.0"
   checksum: 085d2064be39f222b1723c44ee152dcdf62cb36736f6954ab541d4c7abb664246331abd1d2886da5eb7d6b7ed2b87bba411d5938776d6677fd19ac1e23d66c64
+  languageName: node
+  linkType: hard
+
+"encode-utf8@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "encode-utf8@npm:1.0.3"
+  checksum: 6b3458b73e868113d31099d7508514a5c627d8e16d1e0542d1b4e3652299b8f1f590c468e2b9dcdf1b4021ee961f31839d0be9d70a7f2a8a043c63b63c9b3a88
   languageName: node
   linkType: hard
 
@@ -16369,6 +16403,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"mini-svg-data-uri@npm:^1.2.3":
+  version: 1.4.3
+  resolution: "mini-svg-data-uri@npm:1.4.3"
+  bin:
+    mini-svg-data-uri: cli.js
+  checksum: 53a54e124529fb259a13a8e46db231af53a02b08ac39a8e0259f5f492a46cff1a3cd91ffc7c1c101ab0cd9f060b6908466abb705e6fa8a847daa206ed0d0fe06
+  languageName: node
+  linkType: hard
+
 "minimalistic-assert@npm:^1.0.0, minimalistic-assert@npm:^1.0.1":
   version: 1.0.1
   resolution: "minimalistic-assert@npm:1.0.1"
@@ -17945,6 +17988,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"pngjs@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "pngjs@npm:5.0.0"
+  checksum: c074d8a94fb75e2defa8021e85356bf7849688af7d8ce9995b7394d57cd1a777b272cfb7c4bce08b8d10e71e708e7717c81fd553a413f21840c548ec9d4893c6
+  languageName: node
+  linkType: hard
+
 "pnp-webpack-plugin@npm:1.6.4":
   version: 1.6.4
   resolution: "pnp-webpack-plugin@npm:1.6.4"
@@ -18858,6 +18908,20 @@ __metadata:
   dependencies:
     escape-goat: ^2.0.0
   checksum: d2346324780ebae4be847cad052b830e004d816851dd4750fc73faa6cd360f443e358f6b1c83641fd4c904c6055dcb545807f55259a20a52ad86d9477746c724
+  languageName: node
+  linkType: hard
+
+"qrcode@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "qrcode@npm:1.5.0"
+  dependencies:
+    dijkstrajs: ^1.0.1
+    encode-utf8: ^1.0.3
+    pngjs: ^5.0.0
+    yargs: ^15.3.1
+  bin:
+    qrcode: bin/qrcode
+  checksum: bd3c74fa00d729a32a5b161ef51dafacf1973a2936a234b1b780a53639d0290397ca36fa01ffd10f55b448e7baf9320bc3c47b08090d0aac0fc2dec7f094f4a9
   languageName: node
   linkType: hard
 
@@ -22819,10 +22883,13 @@ __metadata:
     "@redwoodjs/forms": 0.48.0
     "@redwoodjs/router": 0.48.0
     "@redwoodjs/web": 0.48.0
+    "@tailwindcss/forms": ^0.5.0
+    "@types/qrcode": ^1.4.2
     autoprefixer: ^10.4.2
     postcss: ^8.4.7
     postcss-loader: ^6.2.1
     prop-types: 15.8.1
+    qrcode: ^1.5.0
     react: 17.0.2
     react-dom: 17.0.2
     tailwindcss: ^3.0.23
