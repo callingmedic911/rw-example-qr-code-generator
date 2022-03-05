@@ -92,15 +92,15 @@ const QRGenerator = () => {
   }
 
   return (
-    <div className="max-w-full sm:max-w-2xl w-full rounded shadow bg-white">
+    <div className="w-full max-w-full rounded bg-white shadow sm:max-w-2xl">
       <TabSelector<QRCodeType>
         options={Object.keys(QRGeneratorFields) as QRCodeType[]}
         currentValue={type}
         defaultValue="Text"
         onChange={setType}
       />
-      <div className="flex flex-col gap-10 sm:flex-row items-center sm:items-start justify-between p-4 sm:py-6 sm:px-10">
-        <Form onSubmit={generateQR} className="flex flex-col gap-2 flex-1">
+      <div className="flex flex-col items-center justify-between gap-10 p-4 sm:flex-row sm:items-start sm:py-6 sm:px-10">
+        <Form onSubmit={generateQR} className="flex flex-1 flex-col gap-2">
           {QRGeneratorFields[type]}
           <div className="flex gap-2">
             <Button as={Submit} data-testid="generate">
@@ -110,9 +110,9 @@ const QRGenerator = () => {
           </div>
         </Form>
         {qrError ? (
-          <div className="flex flex-col gap-4 items-center justify-center w-[256px] h-[256px] p-4 border-2 border-red-800">
-            <ErrorIcon className="fill-red-800 h-12 w-12" />
-            <p data-testid="error" className="text-red-800 text-sm">
+          <div className="flex h-[256px] w-[256px] flex-col items-center justify-center gap-4 border-2 border-red-800 p-4">
+            <ErrorIcon className="h-12 w-12 fill-red-800" />
+            <p data-testid="error" className="text-sm text-red-800">
               Whoops! Couldn&apos;t create the QR. Sure you entered valid input?
             </p>
           </div>
