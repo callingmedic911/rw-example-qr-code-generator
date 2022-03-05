@@ -37,6 +37,7 @@ const TabSelector = <Option extends string = string>({
           {options.map((option, idx) => (
             <button
               key={option}
+              data-testid={`tab-${option}`}
               onClick={() => onChange(option)}
               className={classNames(
                 option === currentValue

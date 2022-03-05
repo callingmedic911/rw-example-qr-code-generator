@@ -15,28 +15,6 @@ import ErrorIcon from 'src/icons/error.svg'
 import Button from 'src/components/Button'
 import TabSelector from 'src/components/TabSelector'
 
-const QRGeneratorFields = {
-  Text: <TextAreaField name="text" placeholder="Enter text" />,
-  URL: <UrlField name="url" placeholder="Enter URL" />,
-  Phone: <TelField name="phone" placeholder="Enter phone number" />,
-  Email: <EmailField name="email" placeholder="Enter email" />,
-  Contact: (
-    <>
-      <TextField name="name" placeholder="Enter name" />
-      <TelField name="phone" placeholder="Enter phone number" />
-      <EmailField name="email" placeholder="Enter email" />
-    </>
-  ),
-  Location: (
-    <>
-      <NumberField name="lat" placeholder="Enter latitude" step="any" />
-      <NumberField name="lng" placeholder="Enter longitude" step="any" />
-    </>
-  ),
-}
-
-type QRCodeType = keyof typeof QRGeneratorFields
-
 const QRGenerator = () => {
   const canvasRef = useRef(null)
   const [type, setType] = useState<QRCodeType>('Text')
@@ -125,14 +103,16 @@ const QRGenerator = () => {
         <Form onSubmit={generateQR} className="flex flex-col gap-2 flex-1">
           {QRGeneratorFields[type]}
           <div className="flex gap-2">
-            <Button as={Submit}>Generate</Button>
+            <Button as={Submit} data-testid="generate">
+              Generate
+            </Button>
             {!qrError && <Button onClick={downloadQR}>Download</Button>}
           </div>
         </Form>
         {qrError ? (
           <div className="flex flex-col gap-4 items-center justify-center w-[256px] h-[256px] p-4 border-2 border-red-800">
             <ErrorIcon className="fill-red-800 h-12 w-12" />
-            <p className="text-red-800 text-sm">
+            <p data-testid="error" className="text-red-800 text-sm">
               Whoops! Couldn&apos;t create the QR. Sure you entered valid input?
             </p>
           </div>
@@ -143,5 +123,67 @@ const QRGenerator = () => {
     </div>
   )
 }
+
+const QRGeneratorFields = {
+  Text: (
+    <TextAreaField
+      data-testid="text-input"
+      name="text"
+      placeholder="Enter text"
+    />
+  ),
+  URL: <UrlField data-testid="url-input" name="url" placeholder="Enter URL" />,
+  Phone: (
+    <TelField
+      data-testid="phone-input"
+      name="phone"
+      placeholder="Enter phone number"
+    />
+  ),
+  Email: (
+    <EmailField
+      data-testid="email-input"
+      name="email"
+      placeholder="Enter email"
+    />
+  ),
+  Contact: (
+    <>
+      <TextField
+        data-testid="contact-name"
+        name="name"
+        placeholder="Enter name"
+      />
+      <TelField
+        data-testid="contact-phone"
+        name="phone"
+        placeholder="Enter phone number"
+      />
+      <EmailField
+        data-testid="contact-email"
+        name="email"
+        placeholder="Enter email"
+      />
+    </>
+  ),
+  Location: (
+    <>
+      <NumberField
+        data-testid="lat-input"
+        name="lat"
+        placeholder="Enter latitude"
+        step="any"
+      />
+      <NumberField
+        data-testid="lng-input"
+        name="lng"
+        placeholder="Enter longitude"
+        step="any"
+      />
+    </>
+  ),
+}
+
+type QRCodeType = keyof typeof QRGeneratorFields
 
 export default QRGenerator
