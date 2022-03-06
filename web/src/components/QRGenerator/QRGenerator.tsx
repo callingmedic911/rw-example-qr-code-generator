@@ -1,4 +1,4 @@
-import { useRef, useState, useLayoutEffect } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import QRCode from 'qrcode'
 import {
   EmailField,
@@ -53,7 +53,7 @@ const QRGenerator = () => {
   }
 
   // Default QR code
-  useLayoutEffect(() => {
+  useEffect(() => {
     setQROnCanvas('https://redwoodjs.com')
   }, [])
 
