@@ -17,6 +17,7 @@
 - Create a page with `yarn rw g page Home`. Update `web/Routes.ts` to handle root path `/` to this page.
 - Use command `yarn rw g component <name>`. It will generate component, test and storybook files. This project used this command for `Button`, `QRGenerator` and `TabSelector`. 
 - Dev time! Code up and style the components in `web/src/components/`. Add more tests.
+- While dev-ing, run `yarn rw type-check web --no-prisma` to run check for any warning/error in project. Use `yarn rw test web --no-db-push` to run the tests. 
 - Lastly to deploy, setup with `yarn rw setup deploy netlify`. Modify `netlify.toml` and update `command`  to `command = "yarn rw deploy netlify --no-prisma --no-data-migrate"` since we don't need don't have any side, therefore no DB.
 - Open Netlify, select the repo. Deploy. Done!
 
