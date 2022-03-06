@@ -7,6 +7,9 @@
 // 'src/pages/HomePage/HomePage.js'         -> HomePage
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 
+// Importing HomePage explicitly here will disable code splitting for this page.
+// Since it's the first page to load, we don't want to wait for page load
+import HomePage from 'src/pages/HomePage'
 import { Router, Route } from '@redwoodjs/router'
 
 const Routes = () => {
