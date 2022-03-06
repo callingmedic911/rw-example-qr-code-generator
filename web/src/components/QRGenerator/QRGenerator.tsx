@@ -92,7 +92,7 @@ const QRGenerator = () => {
   }
 
   return (
-    <div className="w-full max-w-full rounded bg-white shadow sm:max-w-2xl">
+    <div className="w-full max-w-2xl rounded bg-white shadow">
       <TabSelector<QRCodeType>
         options={Object.keys(QRGeneratorFields) as QRCodeType[]}
         currentValue={type}
@@ -100,7 +100,10 @@ const QRGenerator = () => {
         onChange={setType}
       />
       <div className="flex flex-col items-center justify-between gap-10 p-4 sm:flex-row sm:items-start sm:py-6 sm:px-10">
-        <Form onSubmit={generateQR} className="flex flex-1 flex-col gap-2">
+        <Form
+          onSubmit={generateQR}
+          className="flex w-full flex-1 flex-col gap-2"
+        >
           {QRGeneratorFields[type]}
           <div className="flex gap-2">
             <Button as={Submit} data-testid="generate">
